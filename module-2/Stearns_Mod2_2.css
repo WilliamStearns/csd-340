@@ -1,0 +1,26 @@
+/* Global Styles */
+html, body {
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Container */
+#container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h1 {
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  color: #333366;
+  font
