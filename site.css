@@ -1,0 +1,58 @@
+/* Global Styles */
+html, body {
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 50px 100px;
+  padding: 10px;
+}
+
+/* Container */
+#container {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 1px;
+  max-width: 800px;
+  margin: 50px 100px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+a:link {
+  color: #f51212;
+  text-decoration: none;
+}
+a:visited {
+  color: #131212;
+  text-decoration: none;
+}
+a:hover {
+  color: #fac905;
+  text-decoration: underline;
+}
+a:active {
+  color: #f51212;
+  text-decoration: underline;
+}
+/* Header */
+.header {
+  background-color: #f51212;
+  padding: 20px;
+  border: 2px solid #fac905;
+  text-align: left;
+  border-radius: 1px;
+  color: #f8f8fa;
+}
+h1 {
+  font-weight: 700;
+  text-transform: uppercase;
+  
+}
+
+h2 {
+  font-weight: 700;
+  text-transform: uppercase;
+
+}
+h3 {
+  font-weight: 700;
+  text-transform: uppercase;
+}
