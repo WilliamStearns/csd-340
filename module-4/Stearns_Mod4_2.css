@@ -1,0 +1,87 @@
+/* Global Styles */
+html, body {
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+#container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 1200px;
+  margin: 5px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* H1 title centered with black rgba color */
+h1 {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.9);
+  margin-bottom: 30px;
+}
+
+/* Image gallery container with CSS Grid */
+#image-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  margin-top: 10%;
+  margin-bottom: 40px;
+}
+
+/* Gallery item styling */
+.gallery-item {
+  text-align: center;
+}
+
+/* H3 centered with black rgba color */
+h3 {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 15px;
+}
+
+/* Figure styling - centers the image */
+figure {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Image styling */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Figcaption styling with black rgba color */
+figcaption {
+  font-style: italic;
+  font-size: 0.75em;
+  color: rgba(0, 0, 0, 0.7);
+  margin-top: 10px;
+}
+
+/* Bottom div styling */
+.bottom-div {
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  float: right;
+  text-align: right;
+}
+
+/* Link styling */
+a {
+  text-decoration: none;
+  color: #0066cc;
+}
+
+a:hover {
+  text-decoration: underline;
+}
