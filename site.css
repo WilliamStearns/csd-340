@@ -22,7 +22,7 @@ a:link {
 }
 a:visited {
   color: #131212;
-  text-decoration: none;
+  text-decoration: unset;
 }
 a:hover {
   color: #fac905;
