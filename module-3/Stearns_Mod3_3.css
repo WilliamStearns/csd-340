@@ -49,7 +49,7 @@ ol, ul {
   list-style-position: inside;
 }
 
-/* Ordered list styling with solid red border */
+/* Ordered list styling with solid red border - BOTH h3 AND ol */
 .left-div {
   border: 1px solid red;
   border-radius: 15px;
@@ -58,9 +58,10 @@ ol, ul {
 
 .left-div ol {
   margin: 0;
+  /* Ordered list uses default numbers, NOT upper-roman */
 }
 
-/* Unordered list styling with dashed red border */
+/* Unordered list styling with dashed red border - BOTH h3 AND ul */
 .right-div {
   border: 1px dashed red;
   border-radius: 15px;
@@ -69,14 +70,14 @@ ol, ul {
 
 .right-div ul {
   margin: 0;
-  list-style-type: upper-roman;
+  list-style-type: upper-roman; /* THIS should be upper-roman */
 }
 
-/* Bottom div styling */
+/* Bottom div styling - FIXED: margin-top 60% and margin-bottom 20px */
 .bottom-div {
   width: 100%;
-  margin-top: 60px;
-  margin-bottom: 20px;
+  margin-top: 60%; /* Changed from 60px to 60% */
+  margin-bottom: 20px; /* Added this line */
   float: right;
   text-align: right;
 }
