@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+  William Stearns
+  CSD 340 Web Development with HTML and CSS
+  Assignment 9.3: JavaScript - Part 1
+-->
+<head>
+  <meta charset="UTF-8">
+  <title>CSD 340 Web Development with HTML and CSS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 40px;
+    }
+    button {
+      margin: 5px 0;
+    }
+    span {
+      font-weight: bold;
+      color: #003366;
+    }
+  </style>
+
+  <script>
+    var firstWord = "quiet";
+    var secondWord = "stars";
+    var thirdWord = "dreams";
+    var fourthWord = "home";
+  </script>
+</head>
+
+<body>
+<h1>Assignment 9.3: JavaScript - Part 1</h1>
+
+<p>
+  In the <span id="first">__________</span> hours of the night,
+  I sit beneath the sky so bright.
+  The <span id="second">__________</span> above, they gently gleam,
+  whispering softly of <span id="third">__________</span> unseen.
+</p>
+
+<p>
+  A wind rolls in from far away,
+  carrying scents of salt and clay.
+  The firelight fades, the crickets roam,
+  and I begin my walk toward <span id="fourth">__________</span>.
+</p>
+
+<p>
+  With every step, the forest hums,
+  a lullaby of nature’s drums.
+  The night grows cool, the shadows sway—
+  I breathe it in and end the day.
+</p>
+
+<p>
+  <button onclick="document.getElementById('first').innerHTML = firstWord;">Reveal 1</button><br>
+  <button onclick="document.getElementById('second').innerHTML = secondWord;">Reveal 2</button><br>
+  <button onclick="document.getElementById('third').innerHTML = thirdWord;">Reveal 3</button><br>
+  <button onclick="document.getElementById('fourth').innerHTML = fourthWord;">Reveal 4</button>
+</p>
+</body>
+</html>
