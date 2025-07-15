@@ -1,0 +1,93 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.poke-choice {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  cursor: pointer;
+}
+
+.poke-choice img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.4s ease;
+}
+
+.poke-choice .pokemon {
+  opacity: 0;
+  z-index: 1;
+}
+
+.poke-choice:hover .pokemon {
+  opacity: 1;
+}
+
+.poke-choice:hover .ball {
+  opacity: 0;
+}
+
+.poke-choice.selected .pokemon {
+  opacity: 1;
+  animation: popIn 0.5s ease-out forwards;
+}
+
+.poke-choice.selected .ball {
+  opacity: 0;
+}
+
+.poke-choice.disabled {
+  pointer-events: none;
+}
+
+#message {
+  margin-top: 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .poke-choice {
+    width: 200px;
+    height: 200px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}

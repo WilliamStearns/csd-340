@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSD 340 Web Development with HTML and CSS</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Assignment 10.3: JavaScript - Part 2</h1>
+  <p>Hover over a Poké Ball to reveal the Pokémon and click to make your final choice.</p>
+
+  <div class="container">
+    <div class="poke-choice" id="charmander" onclick="choosePokemon('charmander', 'You chose Charmander!')">
+      <img src="images/ball.png" alt="Poké Ball" class="ball" />
+      <img src="images/Char.png" alt="Charmander" class="pokemon" />
+    </div>
+
+    <div class="poke-choice" id="squirtle" onclick="choosePokemon('squirtle', 'You chose Squirtle!')">
+      <img src="images/ball.png" alt="Poké Ball" class="ball" />
+      <img src="images/Squirt.png" alt="Squirtle" class="pokemon" />
+    </div>
+
+    <div class="poke-choice" id="bulbasaur" onclick="choosePokemon('bulbasaur', 'You chose Bulbasaur!')">
+      <img src="images/ball.png" alt="Poké Ball" class="ball" />
+      <img src="images/Bulb.png" alt="Bulbasaur" class="pokemon" />
+    </div>
+  </div>
+
+  <div id="message"></div>
+
+  <audio id="selectSound" src="sounds/chose.mp3" preload="auto"></audio>
+
+  <script>
+    let selected = false;
+
+    function choosePokemon(id, message) {
+      if (selected) return;
+
+      selected = true;
+      confetti({
+  particleCount: 150,
+  spread: 70,
+  origin: { y: 0.6 }
+});
+
+      const sound = document.getElementById('selectSound');
+      sound.currentTime = 0;
+      sound.play();
+
+      document.getElementById('message').textContent = message;
+
+      const chosen = document.getElementById(id);
+      chosen.classList.add('selected');
+
+      document.querySelectorAll('.poke-choice').forEach(pokemon => {
+        pokemon.classList.add('disabled');
+      });
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+</body>
+</html>
