@@ -5,31 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CSD 340 Web Development with HTML and CSS</title>
   <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
   <h1>Assignment 10.3: JavaScript - Part 2</h1>
-  <p>Hover over a Poké Ball to reveal the Pokémon and click to make your final choice.</p>
+  <p>Hover over a Poké Ball to reveal the Pokémon. Click to make your final choice.</p>
 
   <div class="container">
     <div class="poke-choice" id="charmander" onclick="choosePokemon('charmander', 'You chose Charmander!')">
+      <span class="hover-text">It's warm...</span>
       <img src="images/Poke.png" alt="Poké Ball" class="ball" />
       <img src="images/Char.png" alt="Charmander" class="pokemon" />
     </div>
 
     <div class="poke-choice" id="squirtle" onclick="choosePokemon('squirtle', 'You chose Squirtle!')">
+      <span class="hover-text">Feels cool and calm...</span>
       <img src="images/Poke.png" alt="Poké Ball" class="ball" />
       <img src="images/Squirt.png" alt="Squirtle" class="pokemon" />
     </div>
 
     <div class="poke-choice" id="bulbasaur" onclick="choosePokemon('bulbasaur', 'You chose Bulbasaur!')">
+      <span class="hover-text">Smells like leaves...</span>
       <img src="images/Poke.png" alt="Poké Ball" class="ball" />
       <img src="images/Bulb.png" alt="Bulbasaur" class="pokemon" />
     </div>
   </div>
 
   <div id="message"></div>
+  <button id="resetBtn" onclick="resetGame()" style="display: none;">Choose Again</button>
 
   <audio id="selectSound" src="sounds/chose.mp3" preload="auto"></audio>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
   <script>
     let selected = false;
@@ -40,22 +46,33 @@
       selected = true;
 
       confetti({
-  particleCount: 150,
-  spread: 70,
-  origin: { y: 0.6 }
-});
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
 
       const sound = document.getElementById('selectSound');
       sound.currentTime = 0;
       sound.play();
 
       document.getElementById('message').textContent = message;
+      document.getElementById('resetBtn').style.display = 'inline-block';
 
       const chosen = document.getElementById(id);
       chosen.classList.add('selected');
 
       document.querySelectorAll('.poke-choice').forEach(pokemon => {
         pokemon.classList.add('disabled');
+      });
+    }
+
+    function resetGame() {
+      selected = false;
+      document.getElementById('message').textContent = '';
+      document.getElementById('resetBtn').style.display = 'none';
+
+      document.querySelectorAll('.poke-choice').forEach(pokemon => {
+        pokemon.classList.remove('selected', 'disabled');
       });
     }
   </script>
