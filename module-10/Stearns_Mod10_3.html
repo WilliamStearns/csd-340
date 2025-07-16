@@ -12,17 +12,17 @@
 
   <div class="container">
     <div class="poke-choice" id="charmander" onclick="choosePokemon('charmander', 'You chose Charmander!')">
-      <img src="images/Poke.webp" alt="Poké Ball" class="ball" />
+      <img src="images/Poke.png" alt="Poké Ball" class="ball" />
       <img src="images/Char.png" alt="Charmander" class="pokemon" />
     </div>
 
     <div class="poke-choice" id="squirtle" onclick="choosePokemon('squirtle', 'You chose Squirtle!')">
-      <img src="images/Poke.webp" alt="Poké Ball" class="ball" />
+      <img src="images/Poke.png" alt="Poké Ball" class="ball" />
       <img src="images/Squirt.png" alt="Squirtle" class="pokemon" />
     </div>
 
     <div class="poke-choice" id="bulbasaur" onclick="choosePokemon('bulbasaur', 'You chose Bulbasaur!')">
-      <img src="images/Poke.webp" alt="Poké Ball" class="ball" />
+      <img src="images/Poke.png" alt="Poké Ball" class="ball" />
       <img src="images/Bulb.png" alt="Bulbasaur" class="pokemon" />
     </div>
   </div>
@@ -38,6 +38,7 @@
       if (selected) return;
 
       selected = true;
+
       confetti({
   particleCount: 150,
   spread: 70,
@@ -58,7 +59,5 @@
       });
     }
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
 </body>
 </html>
