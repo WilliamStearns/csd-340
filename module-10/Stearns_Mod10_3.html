@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CSD 340 Web Development with HTML and CSS</title>
+
+  <!-- External CSS and Google Fonts -->
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@500&display=swap" rel="stylesheet">
 </head>
@@ -32,17 +34,27 @@
   </div>
 
   <div id="message"></div>
-  <button id="resetBtn" onclick="resetGame()" style="display: none;">Choose Again</button>
+  <button id="resetBtn" onclick="resetGame()">Choose Again</button>
 
+  <!-- Sound & Confetti -->
   <audio id="selectSound" src="sounds/chose.mp3" preload="auto"></audio>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
+  <!-- JavaScript Logic -->
   <script>
     let selected = false;
 
     function choosePokemon(id, message) {
       if (selected) return;
 
+      const choice = document.getElementById(id);
+
+      if (!choice.dataset.revealed) {
+        choice.dataset.revealed = "true"; // First tap or hover: reveal only
+        return;
+      }
+
+      // Second tap: confirm choice
       selected = true;
 
       confetti({
@@ -58,8 +70,7 @@
       document.getElementById('message').textContent = message;
       document.getElementById('resetBtn').style.display = 'inline-block';
 
-      const chosen = document.getElementById(id);
-      chosen.classList.add('selected');
+      choice.classList.add('selected');
 
       document.querySelectorAll('.poke-choice').forEach(pokemon => {
         pokemon.classList.add('disabled');
@@ -73,6 +84,7 @@
 
       document.querySelectorAll('.poke-choice').forEach(pokemon => {
         pokemon.classList.remove('selected', 'disabled');
+        pokemon.removeAttribute('data-revealed'); // reset tap state
       });
     }
   </script>

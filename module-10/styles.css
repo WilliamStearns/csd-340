@@ -106,6 +106,7 @@ p {
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  display: none;
 }
 
 #resetBtn:hover {
@@ -144,4 +145,8 @@ p {
   p {
     font-size: 0.95rem;
   }
+}
+.poke-choice img.ball {
+  z-index: 2;
+  transition: opacity 0.4s ease;
 }
