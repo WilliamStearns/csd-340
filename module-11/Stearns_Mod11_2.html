@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSD 340 Web Development with HTML and CSS</title>
+   <link rel="stylesheet" href="site.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 50px;
+    }
+    input, button {
+      margin: 10px 5px;
+      padding: 5px 10px;
+    }
+    #displayArea {
+      margin-top: 20px;
+      border-top: 1px solid #ccc;
+      padding-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Assignment 11.2: JavaScript - Part 3</h1>
+
+  <input type="text" id="userInput" placeholder="Enter a value">
+  <button onclick="addItem()">Add</button>
+  <button onclick="deleteLast()">Delete Last Entry</button>
+  <button onclick="displayItems()">Display</button>
+
+  <div id="displayArea"></div>
+
+  <script>
+    const items = [];
+
+    function addItem() {
+      const input = document.getElementById('userInput').value;
+      if (input.trim() === "") {
+        alert("Please enter a value.");
+        return;
+      }
+      items.push(input);
+      alert(`"${input}" was added to position ${items.length}.`);
+      document.getElementById('userInput').value = "";
+    }
+
+    function deleteLast() {
+      if (items.length === 0) {
+        alert("Array is already empty.");
+        return;
+      }
+      const removed = items.pop();
+      alert(`"${removed}" was removed from the array.`);
+    }
+
+    function displayItems() {
+      const display = document.getElementById('displayArea');
+      if (items.length === 0) {
+        display.innerHTML = "<p>The array is empty.</p>";
+        return;
+      }
+      let output = "<ul>";
+      for (let i = 0; i < items.length; i++) {
+        output += `<li>${i + 1}. ${items[i]}</li>`;
+      }
+      output += "</ul>";
+      display.innerHTML = output;
+    }
+  </script>
+
+</body>
+</html>
