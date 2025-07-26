@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="William Stearns">
+  <meta name="description" content="Assignment 3.3: Build a Web Page Exercise - Part 3">
+  <meta name="keywords" content="HTML, CSS, Bellevue University, Assignment">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSD 340 Web Development with HTML and CSS</title>
+  <link rel="stylesheet" href="Stearns_Mod12_2.css">
+</head>
+<body>
+  <div id="container">
+    <h1>Assignment 12.2: JavaScript - Part 4</h1>
+    
+    <div class="side-by-side-container">
+      <div class="left-div">
+        <h3>Top 10 Favorite Books</h3>
+        <ol id="bookList">
+          <li>The Vampire Lestat</li>
+          <li>IT</li>
+          <li>Animal Farm</li>
+          <li>A Head Full of Ghosts</li>
+          <li>Fire & Blood</li>
+          <li>The Bible</li>
+          <li>Green Eggs and Ham</li>
+          <li>House of Leaves</li>
+          <li>The Sookie Stackhouse Series</li>
+          <li>The Winds of Winter</li>
+        </ol>
+        <div class="button-container">
+          <button onclick="showTopToBottom()">Top to Bottom</button>
+          <button onclick="showBottomToTop()">Bottom to Top</button>
+        </div>
+      </div>
+      
+      <div class="right-div">
+        <h3>5 Things I've Learned Since the Course Started</h3>
+        <ul>
+          <li>How to properly structure HTML5 documents with semantic elements</li>
+          <li>Using external CSS for styling instead of inline styles</li>
+          <li>The importance of responsive design and viewport meta tags</li>
+          <li>How CSS selectors and specificity work together</li>
+          <li>Basic layout techniques using divs and CSS positioning</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="bottom-div">
+      <a href="../index.html">Back to Landing Page</a>
+    </div>
+  </div>
+
+  <script>
+    const originalBooks = [
+      "The Vampire Lestat",
+      "IT",
+      "Animal Farm",
+      "A Head Full of Ghosts",
+      "Fire & Blood",
+      "The Bible",
+      "Green Eggs and Ham",
+      "House of Leaves",
+      "The Sookie Stackhouse Series",
+      "The Winds of Winter"
+    ];
+
+    function showTopToBottom() {
+    const list = document.getElementById("bookList");
+    list.removeAttribute("reversed"); // Numbers go 1 to 10
+    renderBookList(originalBooks);
+    }
+
+    function showBottomToTop() {
+    const list = document.getElementById("bookList");
+    list.setAttribute("reversed", ""); // Numbers go 10 to 1
+    renderBookList([...originalBooks].reverse());
+    }
+
+    function renderBookList(bookArray) {
+      const list = document.getElementById("bookList");
+      list.innerHTML = "";
+      bookArray.forEach(book => {
+        const li = document.createElement("li");
+        li.textContent = book;
+        list.appendChild(li);
+      });
+    }
+  </script>
+</body>
+</html>
